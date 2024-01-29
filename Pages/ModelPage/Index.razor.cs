@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using YmlEditor.Data.EditModel;
+using YmlEditor.Data.Service;
 using YmlEditor.Data.ViewModels;
 
 namespace YmlEditor.Pages.ModelPage
@@ -9,6 +10,16 @@ namespace YmlEditor.Pages.ModelPage
         public List<ViewModel> ListModel { get; set; } = new();
         public ViewModel Model;
         public EditViewModel EditModel = new EditViewModel();
+        [Inject] ServiceModel Service {  get; set; }
+
+        protected override void OnAfterRender(bool firstRender)
+        {
+            if (firstRender)
+            {
+                ListModel = Service.GetAll();
+                StateHasChanged();
+            }
+        }
 
         public void GettingElements()
         {

@@ -1,12 +1,14 @@
 using MatBlazor;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using YmlEditor.Data.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddMatBlazor();
+builder.Services.AddScoped<ServiceModel>();
 
 var app = builder.Build();
 

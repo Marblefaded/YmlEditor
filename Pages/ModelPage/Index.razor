@@ -2,7 +2,7 @@
 @inherits IndexView
 <PageTitle>YmlEdit</PageTitle>
 
-<button class="btn btn-primary">
+<button class="btn btn-primary" style="margin-bottom:10px;">
     Create
 </button>
 
@@ -10,62 +10,78 @@
 
 @if (ListModel != null)
 {
-    <table class="table">
+    <table class="table table-dark table-striped table-hover table-border">
         <thead>
             <tr>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Id
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Name
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Vendor
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Price
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     CurrencyId
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     CategoryId
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Picture
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Description
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     ShortDescription
                 </td>
-                <td scope="col">
+                <td class="table-dark" scope="col">
                     Url
                 </td>
-                <td scope="col">
-                    Edit
-                </td>
-                <td scope="col">
-                    Delete
-                </td>
+                @* <td scope="col">
+            Edit
+            </td>
+            <td scope="col">
+            Delete
+            </td> *@
             </tr>
         </thead>
-        <tr>
+        <tbody>
+            @foreach (var product in ListModel)
+            {
+                <tr class="table-dark">
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Vendor</td>
+                    <td>@product.Price</td>
+                    <td>@product.CurrencyId</td>
+                    <td>@product.CategoryId</td>
+                    <td>@product.Picture</td>
+                    <td>@product.Description</td>
+                    <td>@product.ShortDescription</td>
+                    <td>@product.Url</td>
 
-        </tr>
+                </tr>
+            }
+        </tbody>
     </table>
 
 }
 
+<style>
+    .table-border{
+        border-radius: 5px;
+        border: 1px solid #000;
+        display: block;
+        width: 80%;
+    }
+</style>
 
 @code {
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-        {
-            GettingElements();
-            InsertElements();
-        }
-    }
+
 }
