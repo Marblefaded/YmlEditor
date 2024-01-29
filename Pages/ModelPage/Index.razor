@@ -1,0 +1,71 @@
+﻿@page "/"
+@inherits IndexView
+<PageTitle>YmlEdit</PageTitle>
+
+<button class="btn btn-primary">
+    Create
+</button>
+
+<br />
+
+@if (ListModel != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <td scope="col">
+                    Id
+                </td>
+                <td scope="col">
+                    Name
+                </td>
+                <td scope="col">
+                    Vendor
+                </td>
+                <td scope="col">
+                    Price
+                </td>
+                <td scope="col">
+                    CurrencyId
+                </td>
+                <td scope="col">
+                    CategoryId
+                </td>
+                <td scope="col">
+                    Picture
+                </td>
+                <td scope="col">
+                    Description
+                </td>
+                <td scope="col">
+                    ShortDescription
+                </td>
+                <td scope="col">
+                    Url
+                </td>
+                <td scope="col">
+                    Edit
+                </td>
+                <td scope="col">
+                    Delete
+                </td>
+            </tr>
+        </thead>
+        <tr>
+
+        </tr>
+    </table>
+
+}
+
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            GettingElements();
+            InsertElements();
+        }
+    }
+}

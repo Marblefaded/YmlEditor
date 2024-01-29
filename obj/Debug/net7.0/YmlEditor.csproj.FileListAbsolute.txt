@@ -29,3 +29,6 @@ D:\Projects\YmlEditor\YmlEditor\obj\Debug\net7.0\refint\YmlEditor.dll
 D:\Projects\YmlEditor\YmlEditor\obj\Debug\net7.0\YmlEditor.pdb
 D:\Projects\YmlEditor\YmlEditor\obj\Debug\net7.0\YmlEditor.genruntimeconfig.cache
 D:\Projects\YmlEditor\YmlEditor\obj\Debug\net7.0\ref\YmlEditor.dll
+D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\MatBlazor.dll
+D:\Projects\YmlEditor\YmlEditor\obj\Debug\net7.0\YmlEditor.csproj.AssemblyReference.cache
+D:\Projects\YmlEditor\YmlEditor\obj\Debug\net7.0\YmlEditor.csproj.CopyComplete

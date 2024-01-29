@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\sitni\.nuget\packages\" />
     <SourceRoot Include="D:\VS Comp\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)matblazor\2.10.0\buildTransitive\MatBlazor.props" Condition="Exists('$(NuGetPackageRoot)matblazor\2.10.0\buildTransitive\MatBlazor.props')" />
+  </ImportGroup>
 </Project>

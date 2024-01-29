@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <PackageReference Include="MatBlazor" Version="2.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\ModelPage\EditDialog\" />
+    <Folder Include="Pages\ModelPage\DeleteDialog\" />
   </ItemGroup>
 
 </Project>

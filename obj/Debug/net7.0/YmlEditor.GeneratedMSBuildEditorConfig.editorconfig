@@ -24,8 +24,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/YmlEditor/YmlEditor/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+[D:/Projects/YmlEditor/YmlEditor/Pages/ModelPage/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kZWxQYWdlXEluZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/YmlEditor/YmlEditor/Shared/SurveyPrompt.razor]

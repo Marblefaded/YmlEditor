@@ -1,8 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "fkm8XH7ALa7FpT9136mx6opkKFLrBM9RWHUv6sK2CJIRu0DGDV3a3QKk+VPM5HMQk2h4ubVENyZrVGRLmW944A==",
+  "dgSpecHash": "XJINTq4KYwuH92NDYSKtnPgwfsClGFVUHOk0kUn3Fc95XCliMyyadu1KWALxmzQoT4vdBK7sdELV7TuKvSSAgA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\YmlEditor\\YmlEditor\\YmlEditor.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\matblazor.2.10.0.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.14\\microsoft.aspnetcore.authorization.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.14\\microsoft.aspnetcore.components.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.14\\microsoft.aspnetcore.components.analyzers.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.14\\microsoft.aspnetcore.components.forms.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.14\\microsoft.aspnetcore.components.web.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.14\\microsoft.aspnetcore.metadata.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.3\\microsoft.extensions.logging.abstractions.6.0.3.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\microsoft.jsinterop\\6.0.14\\microsoft.jsinterop.6.0.14.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
+    "C:\\Users\\sitni\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VBXwodik5BzgA0iJ7ir9SVGeif4wBCjfKJUkjl+J8/g=",
+  "Hash": "I7ZWIPMg5Ehe5jUojU30ZjTTYzLdbghD2DAOxqTkFFk=",
   "Source": "YmlEditor",
   "BasePath": "_content/YmlEditor",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\dist\\matBlazor.css",
+      "SourceId": "MatBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\",
+      "BasePath": "_content/MatBlazor",
+      "RelativePath": "dist/matBlazor.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\dist\\matBlazor.css"
+    },
+    {
+      "Identity": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\dist\\matBlazor.js",
+      "SourceId": "MatBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\",
+      "BasePath": "_content/MatBlazor",
+      "RelativePath": "dist/matBlazor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\dist\\matBlazor.js"
+    },
     {
       "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\YmlEditor.styles.css",
       "SourceId": "YmlEditor",
