@@ -5,53 +5,66 @@
 <PageTitle>YmlEdit</PageTitle>
 
 <button class="btn btn-primary" style="margin-bottom:10px; background-color:peru; border-color:peru" @onclick="(()=>Create())">
-    Create
+    Создать товар
 </button>
 <button class="btn btn-primary" style="margin-bottom:10px; background-color:peru; border-color:peru" @onclick="(()=>CreateYml(ListModel))">
-    Import to yml
+    Импортировать в YML
 </button>
+
+<InputFile id="loaderImage" OnChange="@SaveFiles" multiple />
+
+@* <button @onclick="(()=>ProcessExcelFile())">Заполнить таблицу</button> *@
 <br />
+<h3 class="text-center text-danger">
+    @Error
+</h3>
 
 @if (ListModel != null)
 {
-    <table class="table table-dark table-striped table-hover table-border">
+    <table class="table table-dark">
         <thead>
             <tr>
                 <td class="table-dark" scope="col">
-                    Id
+                    Категория
                 </td>
                 <td class="table-dark" scope="col">
-                    Name
+                    Идентификатор
                 </td>
                 <td class="table-dark" scope="col">
-                    Vendor
+                    Название
                 </td>
                 <td class="table-dark" scope="col">
-                    Price
+                    Популярный товар
                 </td>
                 <td class="table-dark" scope="col">
-                    CurrencyId
+                    Цена
                 </td>
                 <td class="table-dark" scope="col">
-                    CategoryId
+                    В наличии
                 </td>
                 <td class="table-dark" scope="col">
-                    Picture
+                    Количество
                 </td>
                 <td class="table-dark" scope="col">
-                    Description
+                    Фото
                 </td>
                 <td class="table-dark" scope="col">
-                    ShortDescription
+                    Описание
                 </td>
                 <td class="table-dark" scope="col">
-                    Url
+                    Короткое описание
+                </td>
+                <td class="table-dark" scope="col">
+                    Ссылка
+                </td>
+                <td class="table-dark" scope="col">
+                    Единицы измерения
                 </td>
                 <td scope="col">
-                    Edit
+                    Редактировать
                 </td>
                 <td scope="col">
-                    Delete
+                    Удалить
                 </td>
             </tr>
         </thead>
@@ -59,24 +72,26 @@
             @foreach (var product in ListModel)
             {
                 <tr class="table-dark">
+                    <td>@product.Category</td>
                     <td>@product.Id</td>
                     <td>@product.Name</td>
-                    <td>@product.Vendor</td>
+                    <td>@product.PopularProduct</td>
                     <td>@product.Price</td>
-                    <td>@product.CurrencyId</td>
-                    <td>@product.CategoryId</td>
+                    <td>@product.InStock</td>
+                    <td>@product.Count</td>
                     <td>@product.Picture</td>
                     <td>@product.Description</td>
                     <td>@product.ShortDescription</td>
                     <td>@product.Url</td>
+                    <td>@product.Units</td>
                     <td>
                         <button class="btn btn-primary" style="margin-bottom:10px;background-color:peru;border-color:peru" @onclick="(()=>Edit(product))">
-                            Edit
+                            Редактировать
                         </button>
                     </td>
                     <td>
                         <button class="btn btn-primary" style="margin-bottom:10px;background-color:peru;border-color:peru" @onclick="(()=>DeleteItem(product))">
-                            Delete
+                            Удалить
                         </button>
                     </td>
                 </tr>
@@ -85,6 +100,10 @@
     </table>
 
 }
+
+
+
+
 
 <style>
     .table-border {

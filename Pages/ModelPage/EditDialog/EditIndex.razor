@@ -6,52 +6,73 @@
 
 <MatDialog @bind-IsOpen="@ViewModel.DialogIsOpen"  CanBeClosed="false">
     <EditForm class="dialog" Model="ViewModel.Model" style="width: 54vh;" OnValidSubmit="@(()=>{Save.InvokeAsync(ViewModel.Model);})">
+        <DataAnnotationsValidator />
         <MatDialogTitle>
             <div>
                 <input type="submit" value="Сохранить" class="btn-dark" style="float:right; border-radius: 8px; font-size: 15px;" />
                 <span class="btn btn-close" style="left: 20px" @onclick="@(()=>ViewModel.DialogIsOpen=false)"></span>
+                <ValidationMessage For="@(()=>ViewModel.Model.Url)" />
             </div>
         </MatDialogTitle>
         <MatDialogContent style="width: 100%; padding-top: 10px">
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="Name">Name</label>
+                <label class="col-3 pl-0" for="Category">Категория</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Category" id="Category"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Category)" />
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Name">Название</label>
                 <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Name" id="Name"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Name)" />
             </div>
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="Vendor">Vendor</label>
-                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Vendor" id="Vendor"></InputText>
+                <label class="col-3 pl-0" for="PopularProduct">Популярный товар</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.PopularProduct" id="Vendor"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.PopularProduct)" />
             </div>
             <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Price">Цена</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Price" id="Price"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Price)" />
+            </div>
+            @* <div class="form-group row mb-1">
                 <label class="col-3 pl-0" for="Price">Price</label>
                 <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Price" id="Price"></InputText>
+            </div> *@
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="InStock">В наличии</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.InStock" id="InStock"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.InStock)" />
             </div>
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="Price">Price</label>
-                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Price" id="Price"></InputText>
+                <label class="col-3 pl-0" for="Count">Количество</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Count" id="Count"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Count)" />
             </div>
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="CurrencyId">CurrencyId</label>
-                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.CurrencyId" id="CurrencyId"></InputText>
-            </div>
-            <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="CategoryId">CategoryId</label>
-                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.CategoryId" id="CategoryId"></InputText>
-            </div>
-            <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="Picture">Picture</label>
+                <label class="col-3 pl-0" for="Picture">Фото</label>
                 <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Picture" id="Picture"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Picture)" />
             </div>
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="Description">Description</label>
+                <label class="col-3 pl-0" for="Description">Описание</label>
                 <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Description" id="Description"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Description)" />
             </div>
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="ShortDescription">ShortDescription</label>
+                <label class="col-3 pl-0" for="ShortDescription">Короткое описание</label>
                 <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.ShortDescription" id="ShortDescription"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.ShortDescription)" />
             </div>
             <div class="form-group row mb-1">
-                <label class="col-3 pl-0" for="Url">Url</label>
+                <label class="col-3 pl-0" for="Url">Ссылка</label>
                 <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Url" id="Url"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Url)" />
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Units">Единицы измерения</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Units" id="Units"></InputText>
+                <ValidationMessage For="@(()=>ViewModel.Model.Units)" />
             </div>
         </MatDialogContent>
     </EditForm>

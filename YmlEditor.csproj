@@ -9,6 +9,11 @@
   <ItemGroup>
     <PackageReference Include="MatBlazor" Version="2.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NPOI" Version="2.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Excel\" />
   </ItemGroup>
 
 </Project>

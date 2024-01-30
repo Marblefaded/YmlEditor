@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Linq;
 using YmlEditor.Data.ViewModels;
 
 namespace YmlEditor.Data.Service
@@ -10,131 +11,13 @@ namespace YmlEditor.Data.Service
         public List<ViewModel> GetAll()
         {
             string line = "";
-            StreamReader sr = new StreamReader("..\\data.json");
+            StreamReader sr = new StreamReader("..\\YmlEditor\\data.json");
 
             line = sr.ReadToEnd();
 
             sr.Close();
 
             listModel = JsonConvert.DeserializeObject<List<ViewModel>>(line);
-
-            /*JObject file = JObject.Parse(line);
-            int n = 0;
-
-            while (true)
-            {
-                ViewModel model = new ViewModel();
-                if (file["products"].AsJEnumerable<JToken> != null)
-                {
-                    try
-                    {
-                        if (file["products"][n].AsJEnumerable<JToken> != null)
-                        {
-                            if (file["products"][n]["Id"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Id = (string)file["products"][n]["Id"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["Name"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Name = (string)file["products"][n]["Name"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["Vendor"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Vendor = (string)file["products"][n]["Vendor"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["Price"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Price = (string)file["products"][n]["Price"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["CurrencyId"].AsJEnumerable<JToken> != null)
-                            {
-                                model.CurrencyId = (string)file["products"][n]["CurrencyId"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["CategoryId"].AsJEnumerable<JToken> != null)
-                            {
-                                model.CategoryId = (string)file["products"][n]["CategoryId"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["Picture"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Picture = (string)file["products"][n]["Picture"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["Description"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Description = (string)file["products"][n]["Description"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["ShortDescription"].AsJEnumerable<JToken> != null)
-                            {
-                                model.ShortDescription = (string)file["products"][n]["ShortDescription"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            if (file["products"][n]["Url"].AsJEnumerable<JToken> != null)
-                            {
-                                model.Url = (string)file["products"][n]["Url"];
-                            }
-                            else
-                            {
-                                break;
-                            }
-
-
-                            listModel.Add(model);
-                            n++;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        break;
-                    }
-
-                }
-                else
-                {
-                    break;
-                }
-            }
-            foreach (var item in listModel)
-            {
-                Console.WriteLine(item.Vendor);
-            }*/
 
             return listModel;
 
@@ -146,7 +29,7 @@ namespace YmlEditor.Data.Service
 
             string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
 
-            StreamWriter sw = new StreamWriter("..\\data.json");
+            StreamWriter sw = new StreamWriter("..\\YmlEditor\\data.json");
 
             sw.WriteLine(json);
             sw.Close();
@@ -157,12 +40,45 @@ namespace YmlEditor.Data.Service
         public ViewModel Create(ViewModel item)// Создание
         {
             //var newItem = mRepoProject.Create(item.Item);
+            /*foreach (var product in listModel)
+            {
+                product.Id
+            }*/
+            /*listModel.Max<ViewModel, Id>;*/
+            int max = 0;
 
+            if(listModel.Count != 0)
+            {
+                max = Convert.ToInt32(listModel.MaxBy(x => Convert.ToInt32(x.Id)).Id) + 1;
+            }
+
+            item.Id = max.ToString();
             listModel.Add(item);
 
             string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
 
-            StreamWriter sw = new StreamWriter("..\\data.json");
+            StreamWriter sw = new StreamWriter("..\\YmlEditor\\data.json");
+
+            sw.WriteLine(json);
+            sw.Close();
+
+            return item;
+        }
+
+        public ViewModel CreateFromExcel(ViewModel item)// Создание
+        {
+            //var newItem = mRepoProject.Create(item.Item);
+            /*foreach (var product in listModel)
+            {
+                product.Id
+            }*/
+            /*listModel.Max<ViewModel, Id>;*/
+           
+            listModel.Add(item);
+
+            string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
+
+            StreamWriter sw = new StreamWriter("..\\YmlEditor\\data.json");
 
             sw.WriteLine(json);
             sw.Close();
@@ -177,18 +93,21 @@ namespace YmlEditor.Data.Service
             x.Name = model.Name;
             x.Price = model.Price;
             x.Url = model.Url;
-            x.CurrencyId = model.CurrencyId;
-            x.Vendor = model.Vendor;
-            x.CategoryId = model.CategoryId;
+            x.PopularProduct = model.PopularProduct;
+            x.InStock = model.InStock;
+            x.Count = model.Count;
             x.Description = model.Description;
             x.ShortDescription = model.ShortDescription;
             x.Picture = model.Picture;
+            x.Units = model.Units;
+            x.Category = model.Category;
+            
 
             listModel.Add(x);
 
             string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
 
-            StreamWriter sw = new StreamWriter("..\\data.json");
+            StreamWriter sw = new StreamWriter("..\\YmlEditor\\data.json");
 
             sw.WriteLine(json);
             sw.Close();

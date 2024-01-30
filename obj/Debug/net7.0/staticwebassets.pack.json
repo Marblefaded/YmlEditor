@@ -5,6 +5,46 @@
       "PackagePath": "staticwebassets\\YmlEditor.bundle.scp.css"
     },
     {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\08d0e365-454e-413d-be16-23d419d55b6f.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\08d0e365-454e-413d-be16-23d419d55b6f.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\50b33231-ac69-4a74-8f6b-75b546093970.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\50b33231-ac69-4a74-8f6b-75b546093970.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\5935c5eb-6150-4b75-848e-690082da313e.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\5935c5eb-6150-4b75-848e-690082da313e.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\7550aabd-1029-4ba4-a904-ff5e66ebf023.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\7550aabd-1029-4ba4-a904-ff5e66ebf023.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\c093fc69-b787-42a9-8c3a-13a2433928e8.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\c093fc69-b787-42a9-8c3a-13a2433928e8.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\c48b9fe5-be0f-422f-9856-b541772a65ff.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\c48b9fe5-be0f-422f-9856-b541772a65ff.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\c84ce531-d55c-4183-afbb-72e530b15c97.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\c84ce531-d55c-4183-afbb-72e530b15c97.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\c863c10e-8cc9-46fa-9d3c-b4f2b6525c31.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\c863c10e-8cc9-46fa-9d3c-b4f2b6525c31.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\dfaee868-2cce-41ae-b62f-8acfdcee6b78.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\dfaee868-2cce-41ae-b62f-8acfdcee6b78.xlsx"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\Excel\\ecad12ea-c78e-483a-a49a-9cc5c3c7358e.xlsx",
+      "PackagePath": "staticwebassets\\Excel\\ecad12ea-c78e-483a-a49a-9cc5c3c7358e.xlsx"
+    },
+    {
       "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
@@ -55,6 +95,10 @@
     {
       "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\save.js",
+      "PackagePath": "staticwebassets\\save.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.YmlEditor.Microsoft.AspNetCore.StaticWebAssets.props",
