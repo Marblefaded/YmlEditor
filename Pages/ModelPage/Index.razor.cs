@@ -86,28 +86,20 @@ namespace YmlEditor.Pages.ModelPage
 
             if (listModel.Count != 0)
             {
-                try
+                List<string> listCatalog = new List<string>();
+                foreach (var modelDelete in ListModel)
                 {
-                    List<ViewModel> listCatalog = new List<ViewModel>();
-                    listCatalog = listModel;
-                    listCatalog.GroupBy(v => v.Category).Where(g => g.Count() > 1).Select(g => g.Key);
-                    foreach (var item in listCatalog)
-                    {
-                        XmlElement categoryElement = xmlDoc.CreateElement("category");
-                        //categoryElement.SetAttribute("id", $"{item.id}");
-                        categoryElement.InnerText = $"{item.Category}";
+                    listCatalog.Add(modelDelete.Category);
+                }
+                listCatalog = listCatalog.Distinct().ToList();
+                foreach (var item in listCatalog)
+                {
+                    XmlElement categoryElement = xmlDoc.CreateElement("category");
+                    //categoryElement.SetAttribute("id", $"{item.id}");
+                    categoryElement.InnerText = $"{item}";
 
-                        categoriesElement.AppendChild(categoryElement);
-                    }
+                    categoriesElement.AppendChild(categoryElement);
                 }
-                catch
-                {
-                    //Console.WriteLine("Send correct model categories");
-                }
-            }
-            else
-            {
-                //Console.WriteLine("List categories is null");
             }
 
             XmlElement offersElement = xmlDoc.CreateElement("offers");
@@ -227,6 +219,7 @@ namespace YmlEditor.Pages.ModelPage
         {
             Model = item;
             EditModel.Model = item;
+            StateHasChanged();
             /*EditModel.DialogIsOpen = true;*/
         }
         public void DeleteItem(ViewModel item)
@@ -377,7 +370,7 @@ namespace YmlEditor.Pages.ModelPage
                         nineCell = nineCellCheck.ToString();
                         tenCell = tenCellCheck.ToString();
                         elevenCell = elevenCellCheck.ToString();
-                        twelveCell= twelveCellCheck.ToString();
+                        twelveCell = twelveCellCheck.ToString();
                     }
                     if (firstCell != "Категория" || secondCell != "Название" || thirdCell != "Идентификатор" || fourCell != "Описание" || fiveCell != "Короткое описание" || sixCell != "Цена" || sevenCell != "Фото" || eightCell != "Популярный товар" || nineCell != "В наличии" || tenCell != "Количество" || elevenCell != "Единицы измерения" || twelveCell != "Ссылка")
                     {
@@ -385,7 +378,7 @@ namespace YmlEditor.Pages.ModelPage
                         ListNewUser.Clear();
                         return;
                     }
-                    
+
                     for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
                     {
                         ViewModel userViewModel = new ViewModel();
@@ -455,7 +448,7 @@ namespace YmlEditor.Pages.ModelPage
                                 Id = x.ToString();
                                 userViewModel.Id = Id;
                             }
-                             catch (Exception)
+                            catch (Exception)
                             {
                                 Error += "Столбец Идентификатор содержит неправильный тип данных. \n";
                             }
@@ -647,7 +640,7 @@ namespace YmlEditor.Pages.ModelPage
                             var rezult = Service.Create(item);
                         }*/
                         ListModel = Service.GetAll();
-
+                        File.Delete(fileNameExcel);
                         StateHasChanged();
                     }
                 }
