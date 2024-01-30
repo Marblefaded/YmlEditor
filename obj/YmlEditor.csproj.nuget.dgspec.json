@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\YmlEditor\\YmlEditor\\YmlEditor.csproj": {}
+    "D:\\YmlEditor\\YmlEditor.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\YmlEditor\\YmlEditor\\YmlEditor.csproj": {
+    "D:\\YmlEditor\\YmlEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\YmlEditor\\YmlEditor\\YmlEditor.csproj",
+        "projectUniqueName": "D:\\YmlEditor\\YmlEditor.csproj",
         "projectName": "YmlEditor",
-        "projectPath": "D:\\Projects\\YmlEditor\\YmlEditor\\YmlEditor.csproj",
+        "projectPath": "D:\\YmlEditor\\YmlEditor.csproj",
         "packagesPath": "C:\\Users\\sitni\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\",
+        "outputPath": "D:\\YmlEditor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VS Comp\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\sitni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -73,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

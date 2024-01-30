@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hRL98mwJ46N4Pb3z7iIVwlpnUIGYR6uhdxhit+fC7IMQpfM1ynRxYAEiLrKmULv2bAVGQop8PDnG9B1kFpgl7g==",
+  "dgSpecHash": "nBLi6KcmaFHyZF0AEK4STz9Ui/6RmNc0dimwebdFc9RFMz9g2RMm7/Y1Eez9ksEMgCELxhd2czoaK1sFKR+p+A==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\YmlEditor\\YmlEditor\\YmlEditor.csproj",
+  "projectFilePath": "D:\\YmlEditor\\YmlEditor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\matblazor.2.10.0.nupkg.sha512",
     "C:\\Users\\sitni\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.14\\microsoft.aspnetcore.authorization.6.0.14.nupkg.sha512",

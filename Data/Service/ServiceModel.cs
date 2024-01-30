@@ -5,6 +5,7 @@ namespace YmlEditor.Data.Service
 {
     public class ServiceModel
     {
+        public List<ViewModel> listModel = new List<ViewModel>();
         public List<ViewModel> GetAll() // Запарсить json
         {
             string line = "";
@@ -14,14 +15,12 @@ namespace YmlEditor.Data.Service
 
             sr.Close();
 
-            ViewModel model = new ViewModel();
-            List<ViewModel> listModel = new List<ViewModel>();
-
             JObject file = JObject.Parse(line);
             int n = 0;
 
             while (true)
             {
+                ViewModel model = new ViewModel();
                 if (file["products"].AsJEnumerable<JToken> != null)
                 {
                     try
@@ -110,13 +109,13 @@ namespace YmlEditor.Data.Service
                             }
 
 
+                            listModel.Add(model);
+                            n++;
                         }
                         else
                         {
                             break;
                         }
-                        listModel.Add(model);
-                        n++;
                     }
                     catch (Exception ex)
                     {
@@ -129,14 +128,13 @@ namespace YmlEditor.Data.Service
                     break;
                 }
             }
+            foreach (var item in listModel)
+            {
+                Console.WriteLine(item.Vendor);
+            }
+
             return listModel;
         }
-
-        /*private static ViewModel Convert(Pets Model) // Конверт (хз надо или нет)
-        {
-            var item = new ZooViewModel(Model);
-            return item;
-        }*/
 
         /*public ZooViewModel Update(ZooViewModel model)// Редактирование
         {
@@ -156,7 +154,17 @@ namespace YmlEditor.Data.Service
 
         public DutyViewModel Remove(DutyViewModel model)// Удаление
         {
-            repoDuty.Remove(model.Item);
+            listModel.Remove(model);
+
+            Console.WriteLine("\n");
+            foreach (var item in listModel)
+            {
+                Console.WriteLine(item.Vendor);
+            }
+
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(listModel)
+
             return null;
         }*/
     }

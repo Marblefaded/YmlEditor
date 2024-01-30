@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "Id": "1001",
+      "Name": "Товар Brand ABC-01",
+      "Vendor": "Nike",
+      "Price": "800",
+      "CurrencyId": "RUR",
+      "CategoryId": "101",
+      "Picture": "http://example.com/image01.jpg",
+      "Description": "Описание первого товара",
+      "ShortDescription": "Короткое описание первого товара",
+      "Url": "http://example.com/product01/"
+    },
+    {
+      "Id": "1002",
+      "Name": "Товар Brand ABC-02",
+      "Vendor": "Adidas",
+      "Price": "300",
+      "CurrencyId": "RUR",
+      "CategoryId": "101",
+      "Picture": "http://example.com/image02.jpg",
+      "Description": "Описание второго товара",
+      "ShortDescription": "Короткое описание второго товара",
+      "Url": "http://example.com/product02/"
+    }
+
+  ]
+}
