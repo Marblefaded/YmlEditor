@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using YmlEditor.Data.ViewModels;
 
 namespace YmlEditor.Data.Service
@@ -6,7 +7,7 @@ namespace YmlEditor.Data.Service
     public class ServiceModel
     {
         public List<ViewModel> listModel = new List<ViewModel>();
-        public List<ViewModel> GetAll() // Запарсить json
+        public List<ViewModel> GetAll()
         {
             string line = "";
             StreamReader sr = new StreamReader("..\\data.json");
@@ -15,7 +16,9 @@ namespace YmlEditor.Data.Service
 
             sr.Close();
 
-            JObject file = JObject.Parse(line);
+            listModel = JsonConvert.DeserializeObject<List<ViewModel>>(line);
+
+            /*JObject file = JObject.Parse(line);
             int n = 0;
 
             while (true)
@@ -131,41 +134,65 @@ namespace YmlEditor.Data.Service
             foreach (var item in listModel)
             {
                 Console.WriteLine(item.Vendor);
-            }
+            }*/
 
             return listModel;
+
         }
 
-        /*public ZooViewModel Update(ZooViewModel model)// Редактирование
-        {
-            var x = mRepoProject.FindById(model.PetsId);
-            x.Name = model.Name;
-            x.TypeOfAnimal = model.TypeOfAnimal;
-
-            return Convert(mRepoProject.Update(x, model.Item.RowVersion));
-        }
-
-        public ZooViewModel Create(ZooViewModel item)// Создание
-        {
-            var newItem = mRepoProject.Create(item.Item);
-
-            return Convert(newItem);
-        }
-
-        public DutyViewModel Remove(DutyViewModel model)// Удаление
+        public ViewModel Remove(ViewModel model)
         {
             listModel.Remove(model);
 
-            Console.WriteLine("\n");
-            foreach (var item in listModel)
-            {
-                Console.WriteLine(item.Vendor);
-            }
+            string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
 
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(listModel)
+            StreamWriter sw = new StreamWriter("..\\data.json");
+
+            sw.WriteLine(json);
+            sw.Close();
 
             return null;
-        }*/
+        }
+
+        public ViewModel Create(ViewModel item)// Создание
+        {
+            //var newItem = mRepoProject.Create(item.Item);
+            listModel.Add(item);
+
+            string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
+
+            StreamWriter sw = new StreamWriter("..\\data.json");
+
+            sw.WriteLine(json);
+            sw.Close();
+
+            return item;
+        }
+
+        public ViewModel Update(ViewModel model)
+        {
+            var x = listModel.FirstOrDefault(x => x.Id == model.Id);
+            listModel.Remove(x);
+            x.Name = model.Name;
+            x.Price = model.Price;
+            x.Url = model.Url;
+            x.CurrencyId = model.CurrencyId;
+            x.Vendor = model.Vendor;
+            x.CategoryId = model.CategoryId;
+            x.Description = model.Description;
+            x.ShortDescription = model.ShortDescription;
+            x.Picture = model.Picture;
+
+            listModel.Add(x);
+
+            string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
+
+            StreamWriter sw = new StreamWriter("..\\data.json");
+
+            sw.WriteLine(json);
+            sw.Close();
+
+            return x;
+        }
     }
 }
