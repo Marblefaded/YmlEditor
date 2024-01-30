@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NhP5LIi4SNkFltgEewCGv74rDflGj/P7UFChk4qMF2M=",
+  "Hash": "I7ZWIPMg5Ehe5jUojU30ZjTTYzLdbghD2DAOxqTkFFk=",
   "Source": "YmlEditor",
   "BasePath": "_content/YmlEditor",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "YmlEditor\\wwwroot",
       "Source": "YmlEditor",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "Pattern": "**"
     }
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "C:\\Users\\sitni\\.nuget\\packages\\matblazor\\2.10.0\\staticwebassets\\dist\\matBlazor.js"
     },
     {
-      "Identity": "D:\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\YmlEditor.styles.css",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\YmlEditor.styles.css",
       "SourceId": "YmlEditor",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "YmlEditor.styles.css",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\YmlEditor.styles.css"
+      "OriginalItemSpec": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\bundle\\YmlEditor.styles.css"
     },
     {
-      "Identity": "D:\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\YmlEditor.bundle.scp.css",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\YmlEditor.bundle.scp.css",
       "SourceId": "YmlEditor",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "YmlEditor.bundle.scp.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\YmlEditor.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Projects\\YmlEditor\\YmlEditor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\YmlEditor.bundle.scp.css"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\css\\site.css",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\YmlEditor\\wwwroot\\favicon.png",
+      "Identity": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\favicon.png",
       "SourceId": "YmlEditor",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\YmlEditor\\wwwroot\\",
+      "ContentRoot": "D:\\Projects\\YmlEditor\\YmlEditor\\wwwroot\\",
       "BasePath": "_content/YmlEditor",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

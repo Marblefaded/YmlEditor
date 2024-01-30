@@ -11,9 +11,4 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\ModelPage\EditDialog\" />
-    <Folder Include="Pages\ModelPage\DeleteDialog\" />
-  </ItemGroup>
-
 </Project>

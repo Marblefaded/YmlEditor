@@ -1,0 +1,121 @@
+﻿@inherits EditIndexView
+@using Microsoft.AspNetCore.Hosting
+@using Microsoft.Extensions.Logging
+@inject IWebHostEnvironment Environment
+
+
+<MatDialog @bind-IsOpen="@ViewModel.DialogIsOpen"  CanBeClosed="false">
+    <EditForm class="dialog" Model="ViewModel.Model" style="width: 54vh;" OnValidSubmit="@(()=>{Save.InvokeAsync(ViewModel.Model);})">
+        <MatDialogTitle>
+            <div>
+                <input type="submit" value="Сохранить" class="btn-dark" style="float:right; border-radius: 8px; font-size: 15px;" />
+                <span class="btn btn-close" style="left: 20px" @onclick="@(()=>ViewModel.DialogIsOpen=false)"></span>
+            </div>
+        </MatDialogTitle>
+        <MatDialogContent style="width: 100%; padding-top: 10px">
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Name">Name</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Name" id="Name"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Vendor">Vendor</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Vendor" id="Vendor"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Price">Price</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Price" id="Price"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Price">Price</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Price" id="Price"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="CurrencyId">CurrencyId</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.CurrencyId" id="CurrencyId"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="CategoryId">CategoryId</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.CategoryId" id="CategoryId"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Picture">Picture</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Picture" id="Picture"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Description">Description</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Description" id="Description"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="ShortDescription">ShortDescription</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.ShortDescription" id="ShortDescription"></InputText>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-3 pl-0" for="Url">Url</label>
+                <InputText Class="form-control-sm col-9" @bind-Value="ViewModel.Model.Url" id="Url"></InputText>
+            </div>
+        </MatDialogContent>
+    </EditForm>
+</MatDialog>
+
+@* <MatDialog @bind-IsOpen="ViewModel.IsOpened" CanBeClosed="false">
+    <EditForm Model="ViewModel.Item" OnValidSubmit="@(() => Save.InvokeAsync(ViewModel.Item))">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <MatDialogTitle>
+            <span style="top: 20px;">Студенты</span>&nbsp;
+            <div class="btn-group" style="padding-left: 395px; top: -40px;">
+                @if (ViewModel.IsConcurency)
+                {
+                    <span class="btn btn-warning" @onclick="@(() => Reload.InvokeAsync(ViewModel.Item))">Reset</span>
+                }
+                else
+                {
+                    <input type="submit" value="Сохранить" class="btn-dark" style="float:right; border-radius: 8px; font-size: 15px;" />
+                }
+                <span class="btn btn-close" style="left: 20px" @onclick="@(e => ViewModel.IsOpened = false)"></span>
+            </div>
+            <span style="color:red; font-size:15px;">
+                @if (ViewModel.IsConcurency)
+                {
+                    @ViewModel.ConcurencyErrorText
+                }
+            </span>
+        </MatDialogTitle>
+        <MatDialogContent style="width: 100%; padding-top: 10px">
+            <div class="form-group row mb-1">
+                <label for="FirstName" class="col-3 pl-0">Имя</label>
+                <InputText @bind-Value="ViewModel.Item.FirstName" Class="form-control-sm col-9" id="FirstName" />
+            </div>
+            <div class="form-group row mb-1">
+                <label for="MiddleName" class="col-3 pl-0">Отчество</label>
+                <InputText @bind-Value="ViewModel.Item.MiddleName" Class="form-control-sm col-9" id="MiddleName" />
+            </div>
+            <div class="form-group row mb-1">
+                <label for="LastName" class="col-3 pl-0">Фамилия</label>
+                <InputText @bind-Value="ViewModel.Item.LastName" Class="form-control-sm col-9" id="LastName" />
+            </div>
+            <div class="form-group row mb-1">
+                <label for="Location" class="col-6 pl-0">Местоположение</label>
+                <InputText @bind-Value="ViewModel.Item.Location" Class="form-control-sm col-6" id="Location" />
+            </div>
+            <div class="form-group row mb-1">
+                <label for="Email" class="col-6 pl-0">Электронная почта</label>
+                <InputText @bind-Value="ViewModel.Item.Email" Class="form-control-sm col-6" id="Email" />
+            </div>
+            <div class="form-group row mb-1">
+                <label for="Birth" class="col-6 pl-0">День рождение</label>
+                <InputDate @bind-Value="ViewModel.Item.Birth" Class="form-control-sm col-6" id="Birth" />
+            </div>
+            <div class="form-group row mb-1">
+                <label for="BooksId" class="col-6 pl-0">Книги</label>
+                <select @bind="ViewModel.Item.BookId">
+                    @foreach (var item in ViewModel.Books)
+                    {
+                        <option value="@item.BookId">@item.Name</option>
+                    }
+                </select>
+            </div>
+        </MatDialogContent>
+        <ValidationSummary />
+    </EditForm>
+</MatDialog>
+ *@

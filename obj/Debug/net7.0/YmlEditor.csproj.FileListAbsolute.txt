@@ -69,3 +69,4 @@ D:\YmlEditor\obj\Debug\net7.0\YmlEditor.pdb
 D:\YmlEditor\obj\Debug\net7.0\YmlEditor.genruntimeconfig.cache
 D:\YmlEditor\obj\Debug\net7.0\ref\YmlEditor.dll
 D:\YmlEditor\bin\Debug\net7.0\data.json
+D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\data.json

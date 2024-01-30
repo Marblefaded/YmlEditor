@@ -1,11 +1,15 @@
 ﻿@page "/"
+@using YmlEditor.Pages.ModelPage.DeleteDialog
+@using YmlEditor.Pages.ModelPage.EditDialog
 @inherits IndexView
 <PageTitle>YmlEdit</PageTitle>
 
-<button class="btn btn-primary" style="margin-bottom:10px;">
+<button class="btn btn-primary" style="margin-bottom:10px; background-color:peru; border-color:peru" @onclick="(()=>Create())">
     Create
 </button>
-
+<button class="btn btn-primary" style="margin-bottom:10px; background-color:peru; border-color:peru" @onclick="(()=>CreateYml(ListModel))">
+    Import to yml
+</button>
 <br />
 
 @if (ListModel != null)
@@ -43,12 +47,12 @@
                 <td class="table-dark" scope="col">
                     Url
                 </td>
-                @* <td scope="col">
-            Edit
-            </td>
-            <td scope="col">
-            Delete
-            </td> *@
+                <td scope="col">
+                    Edit
+                </td>
+                <td scope="col">
+                    Delete
+                </td>
             </tr>
         </thead>
         <tbody>
@@ -65,7 +69,16 @@
                     <td>@product.Description</td>
                     <td>@product.ShortDescription</td>
                     <td>@product.Url</td>
-
+                    <td>
+                        <button class="btn btn-primary" style="margin-bottom:10px;background-color:peru;border-color:peru" @onclick="(()=>Edit(product))">
+                            Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" style="margin-bottom:10px;background-color:peru;border-color:peru" @onclick="(()=>DeleteItem(product))">
+                            Delete
+                        </button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -74,7 +87,7 @@
 }
 
 <style>
-    .table-border{
+    .table-border {
         border-radius: 5px;
         border: 1px solid #000;
         display: block;
@@ -82,6 +95,11 @@
     }
 </style>
 
-@code {
-
+@if (Model != null && EditModel.DialogIsOpen)
+{
+    <EditIndex ViewModel="EditModel" Save="Save" />
+}
+@if (isDel && Model != null)
+{
+    <DeleteIndex isOpenDelete="isDel" Delete="Delete" />
 }

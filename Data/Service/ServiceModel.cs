@@ -157,6 +157,7 @@ namespace YmlEditor.Data.Service
         public ViewModel Create(ViewModel item)// Создание
         {
             //var newItem = mRepoProject.Create(item.Item);
+
             listModel.Add(item);
 
             string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);
