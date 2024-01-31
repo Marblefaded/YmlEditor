@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using YmlEditor.Data.ViewModels;
+using Converter.Model;
 
 namespace YmlEditor.Data.Service
 {
@@ -73,7 +74,7 @@ namespace YmlEditor.Data.Service
                 product.Id
             }*/
             /*listModel.Max<ViewModel, Id>;*/
-           
+            
             listModel.Add(item);
 
             string json = JsonConvert.SerializeObject(listModel, Formatting.Indented);

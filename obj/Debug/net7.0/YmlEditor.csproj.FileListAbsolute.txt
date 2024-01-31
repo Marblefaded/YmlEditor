@@ -92,3 +92,5 @@ D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System
 D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\Converter.dll
+D:\Projects\YmlEditor\YmlEditor\bin\Debug\net7.0\Converter.pdb

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Converter.Model;
+using Converter;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.JSInterop;
@@ -13,6 +15,7 @@ using YmlEditor.Data.EditModel;
 using YmlEditor.Data.Service;
 using YmlEditor.Data.ViewModels;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Org.BouncyCastle.Utilities;
 
 namespace YmlEditor.Pages.ModelPage
 {
@@ -21,6 +24,7 @@ namespace YmlEditor.Pages.ModelPage
         public List<ViewModel> ListModel { get; set; } = new();
         public ViewModel Model;
         public EditViewModel EditModel = new EditViewModel();
+        public ConvertYml converter = new ConvertYml();
         [Inject] ServiceModel Service { get; set; }
         public bool isDel;
 
@@ -62,140 +66,6 @@ namespace YmlEditor.Pages.ModelPage
             EditModel.DialogIsOpen = true;
         }
 
-        public void CreateYml(List<ViewModel> listModel)
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-
-            XmlDeclaration xmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", null);
-            xmlDoc.AppendChild(xmlDeclaration);
-
-            XmlElement ymlCatalogElement = xmlDoc.CreateElement("yml_catalog");
-            xmlDoc.AppendChild(ymlCatalogElement);
-
-            XmlElement shopElement = xmlDoc.CreateElement("shop");
-            ymlCatalogElement.AppendChild(shopElement);
-
-            XmlElement categoriesElement = xmlDoc.CreateElement("categories");
-            shopElement.AppendChild(categoriesElement);
-            /*XmlElement categoryElement = xmlDoc.CreateElement("category");
-            categoryElement.InnerText = "Категория товаров";
-
-            categoriesElement.AppendChild(categoryElement);*/
-
-
-
-            if (listModel.Count != 0)
-            {
-                List<string> listCatalog = new List<string>();
-                foreach (var modelDelete in ListModel)
-                {
-                    listCatalog.Add(modelDelete.Category);
-                }
-                listCatalog = listCatalog.Distinct().ToList();
-                foreach (var item in listCatalog)
-                {
-                    XmlElement categoryElement = xmlDoc.CreateElement("category");
-                    //categoryElement.SetAttribute("id", $"{item.id}");
-                    categoryElement.InnerText = $"{item}";
-
-                    categoriesElement.AppendChild(categoryElement);
-                }
-            }
-
-            XmlElement offersElement = xmlDoc.CreateElement("offers");
-            shopElement.AppendChild(offersElement);
-
-            if (listModel.Count != 0)
-            {
-                try
-                {
-                    foreach (var item in listModel)
-                    {
-                        AddOffer(xmlDoc, offersElement, item.Id, item.Name, item.PopularProduct, item.Price, item.InStock, item.Count, item.Picture, item.Description, item.ShortDescription, item.Url, item.Units);
-                    }
-                }
-                catch
-                {
-                    Console.WriteLine("Send correct model offers");
-                }
-            }
-            else
-            {
-                Console.WriteLine("List models is null");
-            }
-
-            MemoryStream ms = new MemoryStream();
-            xmlDoc.Save(ms);
-            byte[] bytes = ms.ToArray();
-            ms.Close();
-
-            SaveAsFileAsync(js, "Output.xml", bytes, "application/vnd.ms-excel");
-
-            Console.WriteLine("XML-file created!");
-        }
-
-        public async Task SaveAsFileAsync(IJSRuntime jsrun, string filename, byte[] data, string type = "application/octet-stream")
-        {
-            await jsrun.InvokeAsync<object>("saveAsFile", filename, Convert.ToBase64String(data));
-        }
-
-        static void AddOffer(XmlDocument xmlDoc, XmlElement parentElement, string id, string name, string popularProduct, string price, string inStock, string count, string picture, string description, string shortDescription, string url, string units)
-        {
-
-            XmlElement offerElement = xmlDoc.CreateElement("offer");
-            offerElement.SetAttribute("id", id);
-
-            if (name != null)
-            {
-                AddElement(xmlDoc, offerElement, "name", name);
-            }
-            if (popularProduct != null)
-            {
-                AddElement(xmlDoc, offerElement, "popularProduct", popularProduct);
-            }
-            if (price != null)
-            {
-                AddElement(xmlDoc, offerElement, "price", price);
-            }
-            if (inStock != null)
-            {
-                AddElement(xmlDoc, offerElement, "inStock", inStock);
-            }
-            if (count != null)
-            {
-                AddElement(xmlDoc, offerElement, "count", count);
-            }
-            if (picture != null)
-            {
-                AddElement(xmlDoc, offerElement, "picture", picture);
-            }
-            if (description != null)
-            {
-                AddElement(xmlDoc, offerElement, "description", description);
-            }
-            if (shortDescription != null)
-            {
-                AddElement(xmlDoc, offerElement, "shortDescription", shortDescription);
-            }
-            if (url != null)
-            {
-                AddElement(xmlDoc, offerElement, "url", url);
-            }
-            if (units != null)
-            {
-                AddElement(xmlDoc, offerElement, "units", units);
-            }
-
-
-            parentElement.AppendChild(offerElement);
-        }
-
-        static void AddElement(XmlDocument xmlDoc, XmlElement parentElement, string elementName, string elementValue)
-        {
-            XmlElement childElement = xmlDoc.CreateElement(elementName);
-            childElement.InnerText = elementValue;
-            parentElement.AppendChild(childElement);
-        }
 
         public void Save(ViewModel item)
         {
@@ -246,6 +116,17 @@ namespace YmlEditor.Pages.ModelPage
             Model = item;
             EditModel.Model = item;
             EditModel.DialogIsOpen = true;
+        }
+
+        public void ConvertingYml(List<ViewModel> list)
+        {
+            converter.CreateYml(list);
+            SaveAsFileAsync(js, "Output.xml", converter.Data, "application/vnd.ms-excel");
+        }
+
+        public async Task SaveAsFileAsync(IJSRuntime jsrun, string filename, byte[] data, string type = "application/octet-stream")
+        {
+            await jsrun.InvokeAsync<object>("saveAsFile", filename, Convert.ToBase64String(data));
         }
 
         public async Task OnFileChanged(InputFileChangeEventArgs e, int index)
@@ -372,12 +253,12 @@ namespace YmlEditor.Pages.ModelPage
                         elevenCell = elevenCellCheck.ToString();
                         twelveCell = twelveCellCheck.ToString();
                     }
-                    if (firstCell != "Категория" || secondCell != "Название" || thirdCell != "Идентификатор" || fourCell != "Описание" || fiveCell != "Короткое описание" || sixCell != "Цена" || sevenCell != "Фото" || eightCell != "Популярный товар" || nineCell != "В наличии" || tenCell != "Количество" || elevenCell != "Единицы измерения" || twelveCell != "Ссылка")
+                    /*if (firstCell != "Категория" || secondCell != "Название" || thirdCell != "Идентификатор" || fourCell != "Описание" || fiveCell != "Короткое описание" || sixCell != "Цена" || sevenCell != "Фото" || eightCell != "Популярный товар" || nineCell != "В наличии" || tenCell != "Количество" || elevenCell != "Единицы измерения" || twelveCell != "Ссылка")
                     {
                         File.Delete(fileNameExcel);
                         ListNewUser.Clear();
                         return;
-                    }
+                    }*/
 
                     for (int i = sheet.FirstRowNum + 1; i <= sheet.LastRowNum; i++)
                     {
@@ -425,6 +306,8 @@ namespace YmlEditor.Pages.ModelPage
                             {
                                 Name = row.GetCell(columnIndex).StringCellValue;
                                 userViewModel.Name = Name;
+
+
                             }
                             catch (Exception)
                             {
@@ -632,22 +515,60 @@ namespace YmlEditor.Pages.ModelPage
                         {
                             Error += "Столбец Ссылка пуст. \n";
                         }
+                        ListModel = Service.GetAll();
+                        bool flag = true;
+                        foreach (var item in ListModel)
+                        {
+                            if (userViewModel.Name == item.Name)
+                            {
+                                Error = "Вы ввели одинаковые записи";
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag)
+                        {
+                            Service.CreateFromExcel(userViewModel);
+                        }
 
-                        Service.CreateFromExcel(userViewModel);
+
+
+                        /* if (ListModel.Count == 0)
+                         {
+                             Service.CreateFromExcel(userViewModel);
+                         }
+                         else
+                         {
+                             foreach (var item in ListModel)
+                             {
+                                 if (item.Name != userViewModel.Name)
+                                 {
+                                     Service.CreateFromExcel(userViewModel);
+                                 }
+                                 else
+                                 {
+                                     Error = "Вы ввели одинаковые записи";
+                                 }
+                             }
+                         }*/
+
+
 
                         /*foreach (var item in ListNewUser)
                         {
                             var rezult = Service.Create(item);
                         }*/
-                        ListModel = Service.GetAll();
+                        /*Service.CreateFromExcel(userViewModel);*/
                         File.Delete(fileNameExcel);
-                        StateHasChanged();
+
                     }
+                    ListModel = Service.GetAll();
+
+                    StateHasChanged();
                 }
 
 
             }
-
         }
         public void ProcessExcelFile()
         {

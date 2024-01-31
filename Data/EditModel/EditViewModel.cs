@@ -1,4 +1,5 @@
-﻿using YmlEditor.Data.ViewModels;
+﻿using Converter.Model;
+using YmlEditor.Data.ViewModels;
 
 namespace YmlEditor.Data.EditModel
 {

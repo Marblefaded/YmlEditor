@@ -646,6 +646,16 @@
             "rid": "win"
           }
         }
+      },
+      "Converter/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Converter.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Converter.dll": {}
+        }
       }
     }
   },
@@ -1583,10 +1593,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Converter/1.0.0": {
+      "type": "project",
+      "path": "../Converter/Converter.csproj",
+      "msbuildProject": "../Converter/Converter.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Converter >= 1.0.0",
       "MatBlazor >= 2.10.0",
       "NPOI >= 2.6.2",
       "Newtonsoft.Json >= 13.0.3"
@@ -1624,7 +1640,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projects\\YmlEditor\\Converter\\Converter.csproj": {
+              "projectPath": "D:\\Projects\\YmlEditor\\Converter\\Converter.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

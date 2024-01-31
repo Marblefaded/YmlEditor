@@ -16,4 +16,8 @@
     <Folder Include="wwwroot\Excel\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Converter\Converter.csproj" />
+  </ItemGroup>
+
 </Project>
