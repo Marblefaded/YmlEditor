@@ -26,8 +26,8 @@ namespace YmlEditor.Pages.ModelPage
         public EditViewModel EditModel = new EditViewModel();
         public ConvertYml converter = new ConvertYml();
         [Inject] ServiceModel Service { get; set; }
-        public bool isDel;
 
+        public bool isDel;
         [Inject] IWebHostEnvironment WebHostEnvironment { get; set; }
         [Inject] protected IJSRuntime js { get; set; }
         [Inject] protected IWebHostEnvironment HostingEnv { get; set; }
@@ -79,7 +79,6 @@ namespace YmlEditor.Pages.ModelPage
             else
             {
                 var newItem = Service.Create(item);
-                //ListModel.Add(newItem);
             }
             EditModel.DialogIsOpen = false;
             StateHasChanged();
@@ -90,7 +89,6 @@ namespace YmlEditor.Pages.ModelPage
             Model = item;
             EditModel.Model = item;
             StateHasChanged();
-            /*EditModel.DialogIsOpen = true;*/
         }
         public void DeleteItem(ViewModel item)
         {
@@ -531,34 +529,6 @@ namespace YmlEditor.Pages.ModelPage
                             Service.CreateFromExcel(userViewModel);
                         }
 
-
-
-                        /* if (ListModel.Count == 0)
-                         {
-                             Service.CreateFromExcel(userViewModel);
-                         }
-                         else
-                         {
-                             foreach (var item in ListModel)
-                             {
-                                 if (item.Name != userViewModel.Name)
-                                 {
-                                     Service.CreateFromExcel(userViewModel);
-                                 }
-                                 else
-                                 {
-                                     Error = "Вы ввели одинаковые записи";
-                                 }
-                             }
-                         }*/
-
-
-
-                        /*foreach (var item in ListNewUser)
-                        {
-                            var rezult = Service.Create(item);
-                        }*/
-                        /*Service.CreateFromExcel(userViewModel);*/
                         File.Delete(fileNameExcel);
 
                     }
@@ -566,18 +536,7 @@ namespace YmlEditor.Pages.ModelPage
 
                     StateHasChanged();
                 }
-
-
             }
-        }
-        public void ProcessExcelFile()
-        {
-            foreach (var item in ListNewUser)
-            {
-                var rezult = Service.Create(item);
-            }
-            ListModel = Service.GetAll();
-            StateHasChanged();
         }
     }
 }

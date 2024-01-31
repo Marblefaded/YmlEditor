@@ -3,10 +3,18 @@
 <MatDialog @bind-IsOpen="@isOpenDelete" CanBeClosed="false">
     <MatDialogTitle class="dialog">
         <span style="">Вы хотите удалить запись?</span>
+    </MatDialogTitle>
+    <MatDialogActions>
         <div class="btn-group-delete" style="padding-left: 0px;">
             <input type="submit" value="Да" class="btn-dark" style="border-radius: 8px; font-size: 15px; width: 200px;" @onclick="@(e => Delete.InvokeAsync(true))" />
             <input type="submit" value="Нет" class="btn-dark" style="border-radius: 8px; font-size: 15px; width: 200px;" @onclick="@(e => Delete.InvokeAsync(false))" />
         </div>
-    </MatDialogTitle>
+    </MatDialogActions>
 </MatDialog>
 
+@* <style>
+    .mud-dialog {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+</style> *@
